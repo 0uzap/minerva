@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}Détails
+{% endblock %}
+
+{% block body %}
+
+	<div class="container my-5 bordure">
+		<div class="row text-center">
+			<div class="col-4">
+				<img src="{{ asset('image/couverture/' ~ livre.couverture) }}" alt="{{ livre.couverture }}" class="img-fluid rounded-start" style="max-width: 300px">
+			</div>
+			<div class="col-7 text-start ">
+				<div class="row">
+					<div class="col">
+						<h2 class="card-title">{{ livre.titre }}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="row mt-5">
+							<div class="col">
+								<span class="material-symbols-outlined det">
+									apartment
+								</span>
+								{{ livre.editeur }}
+							</div>
+						</div>
+						<div class="row mt-3">
+							<div class="col">
+								<span class="material-symbols-outlined det">
+									fit_page
+								</span>
+								{{ livre.format }}
+							</div>
+						</div>
+						<div class="row mt-3 mb-5">
+							<div class="col">
+								<span class="material-symbols-outlined det">
+									language
+								</span>
+								{{ livre.langue }}
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="row mt-5">
+							<div class="col">
+								<span class="material-symbols-outlined det">
+									payments
+								</span>
+								{{livre.prix|number_format(2)}}
+								€
+							</div>
+						</div>
+						<div class="row mt-3">
+							<div class="col">
+								<span class="material-symbols-outlined det">
+									auto_stories
+								</span>
+								{{ livre.type }}
+							</div>
+						</div>
+						<div class="row mt-3 mb-5">
+							<div class="col">
+								<span class="material-symbols-outlined det">
+									format_ink_highlighter
+								</span>
+								{{ livre.genre }}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col">
+						{{ livre.resume }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+

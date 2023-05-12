@@ -1,0 +1,51 @@
+.body{
+    background-color: #ced3dc;
+}
+
+#categorie {
+    background-color:#253d93;
+
+}
+
+.catexte {
+    color: white;
+}
+.catexte:hover {
+    background-color:white;
+    color: #253d93;
+}
+
+.titre {
+    color: #253d93;
+}
+
+.envoyer {
+    background-color: #253d93;
+}
+.envoyer:hover{
+    background-color: #253d93;
+    color: white;
+}
+
+.bordure {
+    border: thick double #253d93;
+    padding: 3%;
+}
+
+.det {
+    vertical-align: top;
+}
+
+.alerte {
+    background-color:#253d93;
+    color: white;
+}
+
+footer {
+    background-color: #333333;
+    color: white;
+}
+
+.piedpage {
+    align-self: center;
+}

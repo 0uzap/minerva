@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}Aventure{% endblock %}
+
+{% block body %}
+    
+   <div class="d-flex flex-wrap justify-content-center">
+		{% for l in livre %}
+			<div class="card m-2" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="image/couverture/{{l.couverture}}" alt={{l.couverture}} class="img-fluid rounded-start">
+						<p class="card-text mt-4 ms-2">
+							<small class="text-muted">{{l.editeur}}</small>
+						</p>
+						<p class="card-text ms-2">
+							<small class="text-muted">{{l.format}}</small>
+						</p>
+						<p class="card-text ms-2">
+							<strong>{{l.prix|number_format(2)}}
+								<sup>€</sup>
+							</strong>
+						</p>
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h4 class="card-title">{{l.titre}}</h4>
+							<p class="card-text mt-3">{{l.auteur}}</p>
+							<p class="card-text mt-4 overflow-auto" style="height: 282px">{{l.resume}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					{% if app.user %}
+						{% if l in app.user.favories %}
+							<a href="{{path('favorie', {'id': l.id, 'action': 'supprimer'}) }}" class="btn btn-secondary">
+								<span class="material-symbols-outlined">
+									bookmark_added
+								</span>
+							</a>
+						{% else %}
+							<a href="{{path('favorie', {'id': l.id, 'action': 'ajouter'}) }}" class="btn btn-secondary">
+								<span class="material-symbols-outlined">
+									bookmark_add
+								</span>
+							</a>
+						{% endif %}
+					{% else %}
+						<button class="btn btn-secondary">
+							<span class="material-symbols-outlined">
+								bookmark
+							</span>
+						</button>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

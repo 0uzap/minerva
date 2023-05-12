@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}Accueil
+{% endblock %}
+
+{% block body %}
+
+	<!--Carousels-->
+	<div id="carouselExampleIndicators" class="carousel slide carousel-dark m-5" data-bs-ride="true" style="max-width: auto;">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		</div>
+		<!--Contenue du carousel-->
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="image/festiparis.jpg" class="d-block w-100" alt="paris">
+			</div>
+			<div class="carousel-item">
+				<img src="image/bdangouleme.jpeg" class="d-block w-100" alt="bdangoueleme">
+			</div>
+			<div class="carousel-item">
+				<img src="image/saintmalo.jpeg" class="d-block w-100" alt="saintmalo">
+			</div>
+			<div class="carousel-item">
+				<img src="image/salonlivre.jpeg" class="d-block w-100" alt="salonlivre">
+			</div>
+		</div>
+		<!--Flèches de contrôle / commandes-->
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+
+	<div class="d-flex flex-wrap justify-content-center">
+		{% for l in livre %}
+			<div class="card m-2" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="image/couverture/{{l.couverture}}" alt={{l.couverture}} class="img-fluid rounded-start">
+						<p class="card-text mt-4 ms-2">
+							<small class="text-muted">{{l.editeur}}</small>
+						</p>
+						<p class="card-text ms-2">
+							<small class="text-muted">{{l.format}}</small>
+						</p>
+						<p class="card-text ms-2">
+							<strong>{{l.prix|number_format(2)}}
+								<sup>€</sup>
+							</strong>
+						</p>
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h4 class="card-title">{{l.titre}}</h4>
+							<p class="card-text mt-3">{{l.auteur}}</p>
+							<p class="card-text mt-4 overflow-auto" style="height: 282px">{{l.resume}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					{% if is_granted ('IS_AUTHENTICATED_FULLY') %}
+						{% if app.user %}
+							{% if l in app.user.favories %}
+								<a href="{{path('favorie', {'id': l.id, 'action': 'supprimer'}) }}" class="btn btn-secondary">
+									<span class="material-symbols-outlined">
+										bookmark_added
+									</span>
+								</a>
+							{% else %}
+								<a href="{{path('favorie', {'id': l.id, 'action': 'ajouter'}) }}" class="btn btn-secondary">
+									<span class="material-symbols-outlined">
+										bookmark_add
+									</span>
+								</a>
+							{% endif %}
+						{% else %}
+							<button class="btn btn-secondary">
+								<span class="material-symbols-outlined">
+									bookmark
+								</span>
+							</button>
+						{% endif %}
+						<a href="{{path('detail', {'id': l.id}) }}" class="btn btn-secondary">
+							<span class="material-symbols-outlined">
+								open_in_new
+							</span>
+						</a>
+						<a href="{{path('monPanier', {'id': l.id}) }}" class="btn btn-secondary">
+							<span>
+								ACHETER
+							</span>
+						</a>
+					{% endif %}
+					{% if not is_granted ('IS_AUTHENTICATED_FULLY') %}
+						<a href="{{path('app_login', {'id': l.id}) }}" class="btn btn-secondary">
+							<span class="material-symbols-outlined">
+								bookmark
+							</span>
+						</a>
+						<a href="{{path('detail', {'id': l.id}) }}" class="btn btn-secondary">
+							<span class="material-symbols-outlined">
+								open_in_new
+							</span>
+						</a>
+						<a href="{{path('app_login', {'id': l.id}) }}" class="btn btn-secondary">
+							<span>
+								ACHETER
+							</span>
+						</a>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+
+{% endblock %}
+

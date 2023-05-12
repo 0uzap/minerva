@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}Nous contacter{% endblock %}
+
+{% block body %}
+    
+    <div class="container-fluid">
+	    <div class="row justify-content-center">
+			
+                    <div class="col-10 titre">
+                        <h1 class="text-center mt-4 pt-4 display-1 fw-bold titre"> Nous Contacter </h1>
+                        {{form(form)}}
+                    </div>    
+	    </div>
+	</div>
+{% endblock %}
