@@ -6,22 +6,53 @@
 
 {% block body %}
 
-<div class="container-fluid">
-    <div class="row justify-content-center">
-		<div class="col-10 titre">
-			<h1 class="text-center titre mt-4 pt-4 display-1 fw-bold">Liste du panier</h1>
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr class="fw-bold">
-                            <th scope="col-4"> Nom </th>
-                            <th scope="col"> Prix </th>
-                    </thead>
-                </table>
-            </div>
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-10 titre">
+				<h1 class="text-center titre mt-4 pt-4 display-1 fw-bold">Liste du panier</h1>
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr class="fw-bold">
+								<th scope="col-4">
+									Nom
+								</th>
+								<th scope="col">
+									Prix
+								</th>
+							</tr>
+						</thead>
+						{% for l in app.user.panier.ajouters %}
+							<tbody>
+								<tr class="{{ cycle(['table_primary', 'table-secondary'], loop.index0) }}">
+									<td>{{l.livre.titre}}</td>
+									<td>{{l.Livre.prix|number_format(2)}}€</td>
+									<td>
+										<a href="{{path('supp-panier', {'id':l.id,'action':'supprimer'})}}">
+											<span class="material-symbols-outlined bouton">
+												delete
+											</span>
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						{% endfor %}
+					</table>
+
+
+					<button>
+						<a href="#" class="btn btn-secondary">
+							<span class="material-symbols-outlined">
+								sell
+							</span>
+						</a>
+					</button>
+
+
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
 
 
 {% endblock %}

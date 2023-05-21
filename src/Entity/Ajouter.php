@@ -13,8 +13,6 @@ class Ajouter
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $ajouter = null;
 
     #[ORM\ManyToOne(inversedBy: 'ajouters')]
     private ?Panier $panier = null;
@@ -25,18 +23,6 @@ class Ajouter
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getAjouter(): ?int
-    {
-        return $this->ajouter;
-    }
-
-    public function setAjouter(int $ajouter): self
-    {
-        $this->ajouter = $ajouter;
-
-        return $this;
     }
 
     public function getPanier(): ?Panier

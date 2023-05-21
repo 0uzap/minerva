@@ -75,119 +75,114 @@
 			</div>
 		</nav>
 	</header>
-<nav class="navbar navbar-expand-lg" id="categorie">
+	<nav class="navbar navbar-expand-lg" id="categorie">
 	<div class="container-fluid ">
-		<div class="collapse navbar-collapse">
-			<ul class="navbar-nav me-auto ms-auto">
-				<li class="nav-item dropdown ">
-					<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Littérature Classique</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="{{path('LCtheatre')}}">Theatre</a>
-						<a class="dropdown-item" href="{{path('LCaventure')}}">Aventure</a>
-						<a class="dropdown-item" href="{{path('LCSF')}}">Science fiction</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown mx-3">
-					<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Romans</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="{{path('Raventure')}}">Aventure</a>
-						<a class="dropdown-item" href="{{path('Rpostapo')}}">Post-Apocalyptique</a>
-						<a class="dropdown-item" href="{{path('Rdystopie')}}">Dystopie</a>
-						<a class="dropdown-item" href="{{path('Rfantasy')}}">Fantasy</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown mx-3">
-					<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BD</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="{{path('BDaventure')}}">Aventure</a>
-						<a class="dropdown-item" href="{{path('BDhumoristique')}}">Humoristique</a>
-						<a class="dropdown-item" href="{{path('BDhistorique')}}">Historique</a>
-						<a class="dropdown-item" href="{{path('BDSF')}}">Science fiction</a>
-						<a class="dropdown-item" href="{{path('BDwestern')}}">Western</a>
-						<a class="dropdown-item" href="{{path('BDfantasy')}}">Fantasy</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown mx-3">
-					<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manga</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="{{path('Mshonen')}}">Shonen</a>
-						<a class="dropdown-item" href="{{path('Mshojo')}}">Shojo</a>
-						<a class="dropdown-item" href="{{path('Mseinen')}}">Seinen</a>
-						<a class="dropdown-item" href="{{path('Mjosei')}}">Josei</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown mx-3">
-					<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Poésie</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="{{path('Phaiku')}}">Haïku</a>
-						<a class="dropdown-item" href="{{path('Psurrealiste')}}">Surréaliste</a>
-						<a class="dropdown-item" href="{{path('Pengage')}}">Engagé</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown mx-3">
-					<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mythe et Légendes</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="{{path('MLreligion')}}">Religions</a>
-						<a class="dropdown-item" href="{{path('MLgrecque')}}">Mythologie Grecque</a>
-						<a class="dropdown-item" href="{{path('MLnordique')}}">Mythologie Nordique</a>
-						<a class="dropdown-item" href="{{path('MLegyptienne')}}">Mythologie Egyptienne</a>
-					</div>
-				</li>
-			</ul>
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+	<div class="collapse navbar-collapse">
+		<ul class="navbar-nav me-auto ms-auto">
+			<li class="nav-item dropdown ">
+				<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Littérature Classique</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{path('LCtheatre')}}">Theatre</a>
+					<a class="dropdown-item" href="{{path('LCaventure')}}">Aventure</a>
+					<a class="dropdown-item" href="{{path('LCSF')}}">Science fiction</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown mx-3">
+				<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Romans</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{path('Raventure')}}">Aventure</a>
+					<a class="dropdown-item" href="{{path('Rpostapo')}}">Post-Apocalyptique</a>
+					<a class="dropdown-item" href="{{path('Rdystopie')}}">Dystopie</a>
+					<a class="dropdown-item" href="{{path('Rfantasy')}}">Fantasy</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown mx-3">
+				<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BD</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{path('BDaventure')}}">Aventure</a>
+					<a class="dropdown-item" href="{{path('BDhumoristique')}}">Humoristique</a>
+					<a class="dropdown-item" href="{{path('BDhistorique')}}">Historique</a>
+					<a class="dropdown-item" href="{{path('BDSF')}}">Science fiction</a>
+					<a class="dropdown-item" href="{{path('BDwestern')}}">Western</a>
+					<a class="dropdown-item" href="{{path('BDfantasy')}}">Fantasy</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown mx-3">
+				<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manga</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{path('Mshonen')}}">Shonen</a>
+					<a class="dropdown-item" href="{{path('Mshojo')}}">Shojo</a>
+					<a class="dropdown-item" href="{{path('Mseinen')}}">Seinen</a>
+					<a class="dropdown-item" href="{{path('Mjosei')}}">Josei</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown mx-3">
+				<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Poésie</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{path('Phaiku')}}">Haïku</a>
+					<a class="dropdown-item" href="{{path('Psurrealiste')}}">Surréaliste</a>
+					<a class="dropdown-item" href="{{path('Pengage')}}">Engagé</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown mx-3">
+				<a class="nav-link catexte" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mythe et Légendes</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{path('MLreligion')}}">Religions</a>
+					<a class="dropdown-item" href="{{path('MLgrecque')}}">Mythologie Grecque</a>
+					<a class="dropdown-item" href="{{path('MLnordique')}}">Mythologie Nordique</a>
+					<a class="dropdown-item" href="{{path('MLegyptienne')}}">Mythologie Egyptienne</a>
+				</div>
+			</li>
+		</ul>
 
-		</div>
 	</div>
-</nav>
-{% for message in app.flashes('notice') %}
-	<h2 class="alert alerte text-center mt-4 mb-4" role="alert">
-		{{ message }}
-	</h2>
-{% endfor %}
-{% block body %}{% endblock %}
-<footer>
-	<div class="container-fluid py-4">
-		<div class="row g-0">
-			<div class="col-4 offset-1">
-				<div class="row g-0 mb-3">
-					<h3>A propos
-					</h3>
-				</div>
-				<div class="row g-0">
-					Imaginé en 2023 par Tristan Provost et mis en service durant cette même année, 
-																								Minerva est une librairie fictive imaginée dans le but de créer un site de commerce pour le cour de monsieur Legales.<br>
-					Chez Minerva retrouvez des centaines (?) de livres adaptés à tous les âges et tous les goûts.
-																								Que vous soyez plutôt science fiction ou fantasy, roman policier ou bandes dessinées Minerva aura de quoi satisfaire vos envies de lecture.
-				</div>
+</div></nav>{% for message in app.flashes('notice') %}
+<h2 class="alert alerte text-center mt-4 mb-4" role="alert">
+	{{ message }}
+</h2>{% endfor %}{% block body %}{% endblock %}<footer>
+<div class="container-fluid py-4">
+	<div class="row g-0">
+		<div class="col-md-4 col-12 offset-md-1 ">
+			<div class="row g-0 mb-3">
+				<h3>A propos
+				</h3>
 			</div>
-			<div class="col-2 offset-2 piedpage">
-				<div class="row p-2">
-					<a class="nav-link" href="{{path('contact')}}">Nous contacter</a>
-				</div>
-				<div class="row p-2">
-					<a class="nav-link" href="{{path('faq')}}">FAQ</a>
-				</div>
-				<div class="row p-2">
-					<a class="nav-link" href="{{path('app_register')}}">Créer un compte</a>
-				</div>
+			<div class="row g-0">
+				Imaginé en 2023 par Tristan Provost et mis en service durant cette même année, 
+				Minerva est une librairie fictive imaginée dans le but de créer un site de commerce pour le cour de monsieur Legales.<br>
+				Chez Minerva retrouvez des centaines (?) de livres adaptés à tous les âges et tous les goûts.
+				Que vous soyez plutôt science fiction ou fantasy, roman policier ou bandes dessinées Minerva aura de quoi satisfaire vos envies de lecture.
 			</div>
-			<div class="col-2 piedpage">
-				<div class="row p-2">
-					<a class="nav-link" href="{{path('mentionslegales')}}">Mentions légales</a>
-				</div>
-				<div class="row p-2">
-					<a class="nav-link" href="{{path('cgu')}}">Conditions générales d'utilisations
-					</a>
-				</div>
-				<div class="row p-2">
-					<a class="nav-link" href="{{path('charte')}}">
-						Vos données personnelles
-					</a>
-				</div>
+		</div>
+		<div class="col-md-2 col-6 offset-md-2 piedpage ">
+			<div class="row p-2">
+				<a class="nav-link" href="{{path('contact')}}">Nous contacter</a>
+			</div>
+			<div class="row p-2">
+				<a class="nav-link" href="{{path('faq')}}">FAQ</a>
+			</div>
+			<div class="row p-2">
+				<a class="nav-link" href="{{path('app_register')}}">Créer un compte</a>
+			</div>
+		</div>
+		<div class="col-md-2 col-6 piedpage ">
+			<div class="row p-2">
+				<a class="nav-link" href="{{path('mentionslegales')}}">Mentions légales</a>
+			</div>
+			<div class="row p-2">
+				<a class="nav-link" href="{{path('cgu')}}">Conditions générales d'utilisations
+				</a>
+			</div>
+			<div class="row p-2">
+				<a class="nav-link" href="{{path('charte')}}">
+					Vos données personnelles
+				</a>
 			</div>
 		</div>
 	</div>
-</footer>
-{% block javascripts %}
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-{% endblock %}</body></html>
+</div></footer>{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>{% endblock %}</body></html>
 

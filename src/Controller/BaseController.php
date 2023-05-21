@@ -17,6 +17,7 @@ use App\Entity\Livre;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use App\Entity\Ajouter;
+use App\Entity\Panier;
 
 
 
@@ -176,21 +177,34 @@ class BaseController extends AbstractController
         if ($this->getUser()->getPanier()==null) {
             $panier = new Panier();
             $this->getUser()->setPanier($panier);
+            $entityManagerInterface->persist($this->getUser());
+            $entityManagerInterface->flush();
         }
         $ajouter = new Ajouter();
-        $ajouter = setQte(1);
         $livre= $entityManagerInterface->getRepository(Livre::class)->find($id);
         if ($livre != null) {
             $ajouter -> setLivre($livre);
-            $ajouter -> setLivre($this->getuser()->getPanier());
+            $ajouter -> setPanier($this->getuser()->getPanier());
             $entityManagerInterface->persist($ajouter);
             $entityManagerInterface->flush();
         }
 
-        return $this->redirectToRoute('monPanier');
+        return $this->redirectToRoute('index');
             
     }
 
+    #[Route('/supprimerPanier/{id}', name: 'supp-panier')]
+    public function supprimerPanier($id, EntityManagerInterface $entityManagerInterface): Response
+    {
+        $ajouter = $entityManagerInterface->getRepository(Ajouter::class)->find($id);
+
+        if ($ajouter) {
+            $entityManagerInterface->remove($ajouter);
+            $entityManagerInterface->flush();
+        }
+
+        return $this->redirectToRoute('monPanier');
+    }
 
     #[Route('/faq', name: 'faq')] // étape 1
     public function faq(): Response // étape 2

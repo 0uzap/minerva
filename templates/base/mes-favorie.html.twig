@@ -60,11 +60,17 @@
 								open_in_new
 							</span>
 						</a>
+						<a href="{{path('ajoutPanier', {'id': l.id}) }}" class="btn btn-secondary">
+							<span>
+								ACHETER
+							</span>
+						</a>
 					</div>
 				</div>
 
 			{% endfor %}
-		{% endif %}
+		</div>
+	{% endif %}
 
-	{% endblock %}
+{% endblock %}
 
